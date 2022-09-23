@@ -31,11 +31,6 @@ public class OnlineStoreApplication {
         System.out.println("Welcome to application online store");
     }
 
-    @GetMapping("/")
-    public String getAllBookRequest() {
-        return " Hello Barsbek2";
-    }
-
 //    @PostConstruct
     public void init() {
         Role client = new Role();

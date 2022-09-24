@@ -1,7 +1,7 @@
 package online.config.services;
 
-import online.db.model.User;
-import online.db.repository.UserRepository;
+import online.entity.*;
+import online.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

@@ -1,23 +1,17 @@
-package online.db.servise;
+package online.servise;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import online.db.model.Basket;
-import online.db.model.Products;
-import online.db.model.SecondCategory;
-import online.db.model.dto.ChildOrderDto;
-import online.db.model.dto.MessageResponse;
-import online.db.model.dto.OrderDto;
-import online.db.model.dto.ProductCard;
-import online.db.repository.BasketRepository;
-import online.db.repository.ProductRepository;
-import online.db.repository.SecondCategoryRepository;
-import online.db.repository.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
+import  online.repository.*;
+import online.entity.*;
+import online.dto.*;
+
+
 
 import java.util.ArrayList;
 import java.util.List;

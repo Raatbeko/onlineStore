@@ -1,7 +1,6 @@
-package online.db.repository;
+package online.repository;
 
-import online.db.model.FirstCategory;
-import online.db.model.SecondCategory;
+import online.entity.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

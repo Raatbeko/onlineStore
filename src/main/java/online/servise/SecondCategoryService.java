@@ -1,12 +1,11 @@
-package online.db.servise;
+package online.servise;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import online.db.model.FirstCategory;
-import online.db.model.SecondCategory;
-import online.db.repository.FirstCategoryRepository;
-import online.db.repository.SecondCategoryRepository;
+import online.entity.*;
+import online.repository.*;
+import online.repository.SecondCategoryRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

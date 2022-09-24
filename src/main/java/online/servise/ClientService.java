@@ -1,13 +1,10 @@
-package online.db.servise;
+package online.servise;
 
 import lombok.RequiredArgsConstructor;
-import online.db.model.Basket;
-import online.db.model.User;
-import online.db.model.dto.ClientRegisterDTO;
-import online.db.repository.RoleRepository;
-import online.db.repository.UserRepository;
-import online.exceptions.BadRequestException;
-import online.db.model.dto.MessageResponse;
+import online.entity.*;
+import online.dto.*;
+import online.repository.RoleRepository;
+import online.repository.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

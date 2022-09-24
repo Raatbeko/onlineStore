@@ -1,6 +1,6 @@
 package online.config.services;
 
-import online.db.model.User;
+import online.entity.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,10 +1,10 @@
-package online.db.model;
+package online.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import online.db.model.dto.ProductCard;
+import online.dto.*;
 
 import javax.persistence.*;
 import java.util.List;

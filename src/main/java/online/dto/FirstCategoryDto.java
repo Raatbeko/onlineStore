@@ -1,11 +1,11 @@
-package online.db.model.dto;
+package online.dto;
 
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import online.db.model.SecondCategory;
+import online.entity.*;
 
 import java.util.List;
 

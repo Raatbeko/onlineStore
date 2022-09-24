@@ -1,4 +1,4 @@
-package online.db.model;
+package online.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

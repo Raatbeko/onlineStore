@@ -2,16 +2,11 @@ package online;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import lombok.AllArgsConstructor;
-import online.db.model.Basket;
-import online.db.model.ERole;
-import online.db.model.Role;
-import online.db.model.User;
-import online.db.repository.RoleRepository;
-import online.db.repository.UserRepository;
+import online.repository.*;
+import online.entity.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;

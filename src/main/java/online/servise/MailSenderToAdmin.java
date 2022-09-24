@@ -1,4 +1,4 @@
-package online.db.servise;
+package online.servise;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

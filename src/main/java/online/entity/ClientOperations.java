@@ -1,4 +1,4 @@
-package online.db.model;
+package online.entity;
 
 
 import lombok.Getter;

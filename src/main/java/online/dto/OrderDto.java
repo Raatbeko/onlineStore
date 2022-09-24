@@ -1,9 +1,10 @@
-package online.db.model.dto;
+package online.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import online.dto.*;
 
 import java.util.List;
 

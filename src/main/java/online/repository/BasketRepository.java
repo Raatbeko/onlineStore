@@ -1,7 +1,8 @@
-package online.db.repository;
+package online.repository;
 
 
-import online.db.model.Basket;
+
+import online.entity.Basket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

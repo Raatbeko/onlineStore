@@ -1,13 +1,12 @@
-package online.db.servise;
+package online.servise;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import online.db.model.FirstCategory;
-import online.db.model.SecondCategory;
-import online.db.model.dto.FirstCategoryDto;
-import online.db.repository.FirstCategoryRepository;
-import online.db.repository.SecondCategoryRepository;
+import online.dto.*;
+import online.entity.*;
+import online.repository.*;
+import online.repository.SecondCategoryRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;

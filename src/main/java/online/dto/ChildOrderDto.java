@@ -1,4 +1,4 @@
-package online.db.model.dto;
+package online.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

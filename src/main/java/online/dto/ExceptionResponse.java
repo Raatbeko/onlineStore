@@ -1,4 +1,4 @@
-package online.db.model.dto;
+package online.dto;
 
 import lombok.Getter;
 import lombok.Setter;

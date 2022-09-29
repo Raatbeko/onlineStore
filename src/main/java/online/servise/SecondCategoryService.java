@@ -1,66 +1,18 @@
 package online.servise;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.experimental.FieldDefaults;
-import online.entity.*;
-import online.repository.*;
-import online.repository.SecondCategoryRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import online.entity.SecondCategory;
 
 import java.util.List;
-import java.util.Objects;
 
-@Service
-@AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class SecondCategoryService {
+public interface SecondCategoryService {
 
-    SecondCategoryRepository nextCategoryRepository;
-    FirstCategoryRepository fourCategoryRepository;
+    SecondCategory save(SecondCategory category, Long id);
 
-    public SecondCategory save(SecondCategory category, Long id) {
+    List<SecondCategory> getAllNextCategory(Long id);
 
-        FirstCategory fourCategory = fourCategoryRepository.findById(id).get();
+    SecondCategory updateNextCategory(SecondCategory nextCategory, Long id);
 
-        SecondCategory secondCategory = new SecondCategory();
-                secondCategory.setFirstCategory(fourCategory);
-                secondCategory.setImage(category.getImage());
-                secondCategory.setName(category.getName());
+    String deleteById(Long id);
 
-        return nextCategoryRepository.save(secondCategory);
-    }
-
-    public List<SecondCategory> getAllNextCategory(Long id) {
-        return nextCategoryRepository.findAllNext(id);
-    }
-
-    @Transactional
-    public SecondCategory updateNextCategory(SecondCategory nextCategory, Long id) {
-
-        SecondCategory secondCategory = nextCategoryRepository.findById(id).get();
-        String oldName = secondCategory.getName();
-        String newName = nextCategory.getName();
-
-        if (!oldName.equals(newName)) {
-            secondCategory.setName(newName);
-        }
-
-        if (Objects.nonNull(nextCategory.getImage()))
-            secondCategory.setImage(nextCategory.getImage());
-
-        nextCategoryRepository.save(secondCategory);
-
-        return secondCategory;
-    }
-
-    public String deleteById(Long id) {
-        nextCategoryRepository.deleteById(id);
-        return "Delete Category successfully";
-    }
-
-    public SecondCategory findById(Long id) {
-        return nextCategoryRepository.findById(id).get();
-    }
+    SecondCategory findById(Long id);
 }

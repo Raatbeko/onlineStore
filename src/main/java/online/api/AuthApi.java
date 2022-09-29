@@ -1,15 +1,15 @@
 package online.api;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import online.config.security.JwtResponse;
 import online.config.security.LoginRequest;
 import online.config.security.jwt.JwtUtils;
 import online.config.services.UserDetailsImpl;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
-import online.dto.*;
+import online.dto.ClientRegisterDTO;
 import online.servise.ClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

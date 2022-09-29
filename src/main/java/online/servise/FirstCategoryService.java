@@ -1,75 +1,21 @@
 package online.servise;
 
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
-import online.dto.*;
-import online.entity.*;
-import online.repository.*;
-import online.repository.SecondCategoryRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.webjars.NotFoundException;
+import online.dto.FirstCategoryDto;
+import online.entity.FirstCategory;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-@Service
-@RequiredArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class FirstCategoryService {
+public interface FirstCategoryService {
 
-    FirstCategoryRepository repository;
-    SecondCategoryRepository secondCategoryRepository;
+    List<FirstCategoryDto> getAllFourCategory();
 
-    public FirstCategory save(FirstCategory category) {
-        return repository.save(category);
-    }
+    FirstCategory save(FirstCategory category);
 
-    public List<FirstCategoryDto> getAllFourCategory() {
-        List<FirstCategory> firstCategories = repository.findAll();
-        List<FirstCategoryDto> firstCategoryDtos = new ArrayList<>();
-        for (FirstCategory firstCategory : firstCategories) {
-            List<SecondCategory> secondCategories = secondCategoryRepository.findByFirstCategory(firstCategory);
-            firstCategoryDtos.add(FirstCategoryDto.builder()
-                    .id(firstCategory.getId())
-                    .nameCategory(firstCategory.getNameCategory())
-                    .nextCategory(secondCategories)
-                    .image(firstCategory.getImage()).build());
-        }
-        return firstCategoryDtos;
-    }
+    FirstCategory updateCategory(FirstCategory products, Long id);
 
-    @Transactional
-    public FirstCategory updateCategory(FirstCategory products, Long id) {
+    String delete(Long id);
 
-        FirstCategory fourCategory = repository.findById(id).orElseThrow(() -> {
-            throw new NotFoundException(
-                    String.format("not-found id: ", id)
-            );
-        });
+    FirstCategory findById(Long id);
 
-        String oldName = fourCategory.getNameCategory();
-        String newName = products.getNameCategory();
 
-        if (!oldName.equals(newName)) {
-            fourCategory.setNameCategory(newName);
-        }
-        if (Objects.nonNull(products.getImage()))
-            fourCategory.setImage(products.getImage());
-
-        repository.save(fourCategory);
-
-        return fourCategory;
-    }
-
-    public String delete(Long id) {
-        repository.deleteById(id);
-        return "Successfully delete Category";
-    }
-
-    public FirstCategory findById(Long id) {
-        return repository.findById(id).get();
-    }
 }

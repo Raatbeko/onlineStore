@@ -16,5 +16,7 @@ public class OrderDto {
     List<ChildOrderDto> orders;
     private String phoneNumber;
     private String fullName;
+    private String address;
+    private String comment;
 
 }

@@ -7,8 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import online.entity.*;
 import online.servise.FirstCategoryService;
-import online.servise.SecondCategoryService;
 import online.servise.ProductService;
+import online.servise.SecondCategoryService;
+import online.servise.impl.DefaultFirstCategoryService;
+import online.servise.impl.DefaultSecondCategoryService;
+import online.servise.impl.DefaultProductService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 

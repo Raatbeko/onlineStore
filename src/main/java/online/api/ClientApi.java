@@ -2,11 +2,15 @@ package online.api;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
-import online.entity.Basket;
-import online.entity.*;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import online.dto.FirstCategoryDto;
 import online.dto.OrderDto;
+import online.entity.Basket;
+import online.entity.FirstCategory;
+import online.entity.Products;
+import online.entity.SecondCategory;
 import online.repository.BasketRepository;
 import online.servise.FirstCategoryService;
 import online.servise.ProductService;
@@ -14,20 +18,22 @@ import online.servise.SecondCategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashSet;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/client")
 @CrossOrigin(origins = "*", maxAge = 3600)
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Tag(name = "Client", description = "Client accessible apis")
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ClientApi {
 
-    private final ProductService productService;
-    private final FirstCategoryService fourCategoryService;
-    private final SecondCategoryService nextCategoryService;
-    private final BasketRepository basketRepository;
+    ProductService productService;
+    FirstCategoryService fourCategoryService;
+    SecondCategoryService nextCategoryService;
+    BasketRepository basketRepository;
 
     @Operation(summary = "get all four category")
     @GetMapping("/four-category")
@@ -62,7 +68,7 @@ public class ClientApi {
     
     @Operation(summary = "search by model")
     @GetMapping("/products/search")
-    public List<Products> search(@RequestParam String model) {
+    public HashSet<Products> search(@RequestParam String model) {
         return productService.findProductByModel(model);
     }
 
